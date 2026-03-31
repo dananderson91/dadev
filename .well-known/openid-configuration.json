@@ -1,47 +1,156 @@
 {
- "issuer": "https://accounts.adp.com",
- "authorization_endpoint": "https://accounts.adp.com/auth/oauth/v2/authorize",
- "token_endpoint": "https://accounts.adp.com/auth/oauth/v2/token",
- "userinfo_endpoint": "https://api.adp.com/core/v1/userinfo",
- "revocation_endpoint": "https://accounts.adp.com/auth/oauth/v2/logout",
- "jwks_uri": "https://accounts.adp.com/auth/oauth/v2/jwks",
- "response_types_supported": [
-  "code"
- ],
- "subject_types_supported": [
-  "public"
- ],
- "id_token_signing_alg_values_supported": [
-  "RS256"
- ],
- "scopes_supported": [
-  "openid",
-  "profile",
-  "email"
- ],
- "token_endpoint_auth_methods_supported": [
-  "client_secret_basic",
-  "tls_client_auth"
- ],
- "claims_supported": [
-  "sub",
-  "iss",
-  "aud",
-  "exp",
-  "iat",
-  "auth_time",
-  "name",
-  "given_name",
-  "family_name",
-  "email",
-  "associateOID",
-  "organizationOID"
- ],
- "code_challenge_methods_supported": [
-  "S256"
- ],
- "grant_types_supported": [
-  "authorization_code"
- ],
- "authorization_response_iss_parameter_supported": true
+  "issuer": "https://accounts.adp.com",
+  "authorization_endpoint": "https://api.adp.com:8443/auth/oauth/v2/authorize",
+  "token_endpoint": "https://api.adp.com:8443/auth/oauth/v2/token",
+  "device_authorization_endpoint": "https://api.adp.com:8443/auth/oauth/v2/device-authorization",
+  "pushed_authorization_request_endpoint": "https://api.adp.com:8443/auth/oauth/v2/par",
+  "backchannel_authentication_endpoint": "https://api.adp.com:8443/auth/oauth/v2/bc-authorize",
+  "jwks_uri": "https://api.adp.com:8443/openid/connect/jwks.json",
+  "response_types_supported": [
+    "code",
+    "token id_token",
+    "token",
+    "code id_token",
+    "id_token",
+    "code token",
+    "code id_token token"
+  ],
+  "subject_types_supported": [
+    "pairwise"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "PS256",
+    "RS256",
+    "HS256"
+  ],
+  "backchannel_token_delivery_modes_supported": [
+    "poll"
+  ],
+  "end_session_endpoint": "https://api.adp.com:8443/connect/session/logout",
+  "userinfo_endpoint": "https://api.adp.com:8443/openid/connect/v1/userinfo",
+  "registration_endpoint": "https://api.adp.com:8443/openid/connect/register",
+  "scopes_supported": [
+    "openid",
+    "email",
+    "profile",
+    "openid_client_registration"
+  ],
+  "claims_supported": [
+    "sub",
+    "iss",
+    "auth_time",
+    "acr",
+    "aud",
+    "azp",
+    "exp",
+    "c_hash",
+    "at_hash",
+    "s_hash",
+    "nonce"
+  ],
+  "request_object_encryption_alg_values_supported": [
+    "RSA1_5",
+    "RSA-OAEP-256",
+    "A192KW",
+    "ECDH-ES+A192KW",
+    "A128GCMKW",
+    "A192GCMKW",
+    "A256GCMKW",
+    "PBES2-HS256+A128KW",
+    "PBES2-HS384+A192KW",
+    "PBES2-HS512+A256KW"
+  ],
+  "request_object_encryption_enc_values_supported": [
+    "A128CBC-HS256",
+    "A256CBC-HS512"
+  ],
+  "request_object_signing_alg_values_supported": [
+    "HS256",
+    "HS384",
+    "HS512",
+    "PS256",
+    "PS384",
+    "PS512",
+    "RS256",
+    "RS384",
+    "RS512",
+    "ES256",
+    "ES384",
+    "ES512"
+  ],
+  "backchannel_authentication_request_signing_alg_values_supported": [
+    "HS256",
+    "HS384",
+    "HS512",
+    "PS256",
+    "PS384",
+    "PS512",
+    "RS256",
+    "RS384",
+    "RS512",
+    "ES256",
+    "ES384",
+    "ES512"
+  ],
+  "backchannel_user_code_parameter_supported": false,
+  "request_parameter_supported": true,
+  "request_uri_parameter_supported": true,
+  "require_request_uri_registration": false,
+  "require_pushed_authorization_requests": false,
+  "grant_types_supported": [
+    "authorization_code",
+    "implicit",
+    "refresh_token",
+    "password",
+    "client_credentials",
+    "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    "urn:ietf:params:oauth:grant-type:saml2-bearer",
+    "urn:ietf:params:oauth:grant-type:token-exchange",
+    "urn:ietf:params:oauth:grant-type:device_code",
+    "urn:openid:params:grant-type:ciba"
+  ],
+  "acr_values_supported": [
+    "0"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_basic",
+    "client_secret_post",
+    "client_secret_jwt",
+    "private_key_jwt",
+    "tls_client_auth",
+    "self_signed_tls_client_auth"
+  ],
+  "token_endpoint_auth_signing_alg_values_supported": [
+    "RS256",
+    "HS256",
+    "PS256"
+  ],
+  "display_values_supported": [
+    "page"
+  ],
+  "claim_types_supported": [
+    "normal"
+  ],
+  "service_documentation": "https://api.adp.com:8443/apidocs/auth/oauth/v2/swagger",
+  "ui_locales_supported": [
+    "en-US"
+  ],
+  "response_modes_supported": [
+    "query",
+    "fragment",
+    "form_post",
+    "query.jwt",
+    "fragment.jwt",
+    "form_post.jwt",
+    "jwt"
+  ],
+  "userinfo_signing_alg_values_supported": [
+    "PS256",
+    "RS256",
+    "HS256"
+  ],
+  "authorization_signing_alg_values_supported": [
+    "PS256"
+  ],
+  "tls_client_certificate_bound_access_tokens": true
 }
